@@ -20,7 +20,7 @@ const ProfileView = () => {
   const fetchUserProfile = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`/api/users/${id}`);
+      const response = await axios.get(`https://testcase-backend.onrender.com/api/users/${id}`);
       const { user: userData, posts: userPosts } = response.data;
       
       setUser(userData);
