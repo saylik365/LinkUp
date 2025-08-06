@@ -9,7 +9,6 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const cors = require("cors");
 const allowedOrigins = [
   "https://linkup-1-08s6.onrender.com", 
   "http://localhost:3000",             
