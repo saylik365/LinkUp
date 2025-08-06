@@ -20,7 +20,7 @@ const CreatePost = ({ onPostCreated }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post('/api/posts', { content });
+      const response = await axios.post('https://linkup-3gic.onrender.com/api/posts', { content });
       const newPost = response.data;
       
       onPostCreated(newPost);
