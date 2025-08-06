@@ -12,14 +12,14 @@ const Feed = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+useEffect(() => {
+  setPage(1);
+}, []);
 
   const fetchPosts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`/api/posts?page=${page}&limit=10`);
+      const response = await axios.get(`https://linkup-3gic.onrender.com/api/posts?page=${page}&limit=10`);
       const newPosts = response.data.posts;
       
       if (page === 1) {
@@ -36,12 +36,12 @@ const Feed = () => {
     }
   };
 
-  const loadMore = () => {
-    if (!loading && hasMore) {
-      setPage(prev => prev + 1);
-      fetchPosts();
-    }
-  };
+const loadMore = () => {
+  if (!loading && hasMore) {
+    setPage(prev => prev + 1);
+  }
+};
+
 
   const handlePostCreated = (newPost) => {
     setPosts(prev => [newPost, ...prev]);
