@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const res = await axios.get('/api/auth/user');
+          const res = await axios.get('https://linkup-3gic.onrender.com/api/auth/user');
           setUser(res.data);
         } catch (error) {
           localStorage.removeItem('token');
