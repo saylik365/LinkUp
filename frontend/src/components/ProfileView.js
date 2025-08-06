@@ -20,7 +20,8 @@ const ProfileView = () => {
   const fetchUserProfile = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`https://linkup-3gic.onrender.com/api/users/${id}`);
+      const API_BASE_URL = "https://linkup-3gic.onrender.com";
+      const response = await axios.get(`${API_BASE_URL}/api/users/${id}`);
       const { user: userData, posts: userPosts } = response.data;
       
       setUser(userData);
