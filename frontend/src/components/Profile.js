@@ -25,7 +25,7 @@ const Profile = () => {
   const fetchUserProfile = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`/api/users/${id}`);
+      const response = await axios.get(`https://testcase-backend.onrender.com/api/users/${id}`);
       const { user: userData, posts: userPosts } = response.data;
       
       setUser(userData);
@@ -45,7 +45,7 @@ const Profile = () => {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put('/api/users/profile', editForm);
+      const response = await axios.put('https://testcase-backend.onrender.com/api/users/profile', editForm);
       setUser(response.data);
       setIsEditing(false);
     } catch (error) {
