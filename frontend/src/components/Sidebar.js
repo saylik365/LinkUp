@@ -32,7 +32,7 @@ const Sidebar = () => {
 
   const fetchUserPosts = async () => {
     try {
-      const response = await axios.get(`/api/users/${user?._id}`);
+      const response = await axios.get(`https://linkup-3gic.onrender.com/api/users/${user?._id}`);
       setPostCount(response.data.posts.length);
     } catch (error) {
       console.error('Error fetching user posts:', error);
